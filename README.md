@@ -6,7 +6,7 @@
 
 In this project i will be creating and managing users, groups and roles. I will implement policies to secure AWS resources, ensuring proper access control and enhancing overall cloud security.
 
-#### 1.1. Project Goals
+#### 1.1. Project Goals and Requirement
 
 * Understand AWS Identity and Access Management (IAM) principles and componets.
 * Learn to create and manage IAM policies for regulating access to AWS resources securely.

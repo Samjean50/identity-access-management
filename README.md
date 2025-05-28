@@ -1,83 +1,98 @@
 # Mini Project - AWS Identity and Access Management
 
-## Mini Project - AWS Solution Architect
+## Table of Contents
+
+1. Project Overview  
+   - 1.1 [Project Goals and Requirements](#11-project-goals-and-requirements)  
+   - 1.2 [Use Case](#12-use-case)
+
+2. Project Tasks  
+   - 2.1 [Part 1 - Policy and User Setup](#21-part-1---policy-and-user-setup)  
+   - 2.2 [Part 2 - Group and Role-Based Access](#22-part-2---group-and-role-based-access)
+
+3. Troubleshooting  
+4. Conclusion  
+
 
 ### 1. Project Overview
 
-In this project i will be creating and managing users, groups and roles. I will implement policies to secure AWS resources, ensuring proper access control and enhancing overall cloud security.
+This mini project focuses on using AWS Identity and Access Management (IAM) to create and manage users, groups, roles, and policies. The goal is to implement secure access control for AWS resources, demonstrating a practical understanding of IAM best practices and configurations.
 
-#### 1.1. Project Goals and Requirement
+#### 1.1 Project Goals and Requirements
 
-* Understand AWS Identity and Access Management (IAM) principles and componets.
-* Learn to create and manage IAM policies for regulating access to AWS resources securely.
-* Apply IAM concepts practically to control access within the AWS environments.
-* Explore best practices for IAM implementation and security in AWS.
+* Understand AWS IAM principles and components.
+* Learn to create and manage IAM policies.
+* Apply IAM concepts to control access in AWS environments.
+* Explore best practices for IAM implementation and cloud security.
 
-#### 1.2. Use Case
+#### 1.2 Use Case
 
-It helps control who can access what in Amazon Web Services.
+IAM helps control who can access what in AWS by defining policies and assigning them to users, groups, or roles.
+
 
 ### 2. Project Tasks
 
-#### 2.1. Part 1
+#### 2.1 Part 1 - Policy and User Setup
 
-1. I navigated to the AWS Management Console and used the search bar to locate the Identity and Access Management (IAM) service.
-![initiate-policy-creation](images/clickiam.png)
+1. Navigate to the **AWS Management Console** and locate **IAM** using the search bar.  
+   ![initiate-policy-creation](images/clickiam.png)
 
-2. Now on the IAM dashboard, i clicked on "Policies."From there i searched for EC2 and selected "AmazonEC2FullAccess" from the list of policies, then clicked on "Create policy" to initiate the policy creation process.
-![create-policy](images/createpolicy.png)
-   * I then selected all EC2 actions, ticked "All resources" and clicked "Next."
-![allec2actions](images/allec2actions.png)
+2. On the IAM dashboard, select **Policies**. Search for **EC2**, choose **AmazonEC2FullAccess**, then click **Create policy**.  
+   ![create-policy](images/createpolicy.png)
 
-   * I then clicked on create policy.
+   * Select **All EC2 actions**, tick **All resources**, and click **Next**.  
+     ![allec2actions](images/allec2actions.png)
+   * Click **Create policy**.
 
-3. I then proceeded to the "Users" section, and selected the option to "Create user".
-![create-user](images/createuser.png)
+3. Go to the **Users** section and select **Create user**.  
+   ![create-user](images/createuser.png)
 
-   * I entered my desired username for the user, then selected the option "Provide user access to the AWS Management Console" and proceeded to set up the password for the user. I also checked the box "Users must create a new password at next sign-in."
-![userdetails](images/specifyuserdetails.png)
+   * Enter a username, enable **AWS Management Console access**, set a password, and require the user to change it at next sign-in.  
+     ![userdetails](images/specifyuserdetails.png)
 
-   * I selected "Attach policy directly" and navigated to "Filter customer managed policies" and chose the policy i created.
-![initiate-policy-creation](images/attachpolicytouser.png)
-   * I then proceeded by clicking "Next" and "Create User."
-![initiate-policy-creation](images/usercreatedsuccessfully.png)
+   * Choose **Attach policies directly**, filter for **Customer managed policies**, and select the policy created earlier.  
+     ![initiate-policy-creation](images/attachpolicytouser.png)
 
-#### 2.2. Part 2
-
-1. On the "User Groups" section, i entered a name for the group, clicked on "Create User Group", then proceeded to the "Users" section.
-![create-user-group](images/createusergroup.png)
-![create-user-group](images/usergroupcreated.png)
-
-2. I created a user named Jack, In the "Permissions" options, i selected "Add user to group". Then, in the "User groups" section, i chose the group i created and clicked "Next."
-![create-user-jack](images/userjackcreatedsuccessfully.png)
-![create-user-jack](images/addusertogroup.png)
-3. I then clicked on create user and repeated the same process for user Ade by creating the user Ade and adding him to the user group "Development-team."
-
-![create-user-ade](images/clickcreateuserade.png)
-![create-user-jack](images/addusertogroup.png)
-
-4. I navigated to the "Policies" section and clicked on "Create Policy" to start crafting a new policy.
-![create-policy](images/createpolicy.png)
-
-   * I chose the 2 services, EC2 and S3.
-![ec2 ](images/allec2actions2.png)
-![s3](images/alls3actions2.png)
-   * Entered the desired policy name and proceed to clicked on the "Create policy" button.
-![devteampolicy ](images/clickcreatedevelopmentteampolicy.png)
-
-5. I navigated to the "User group" section and selected the "Development-team" group. I then proceeded to the "Permissions" section and added the neccessary permissions.
-![add-permission ](images/Addpermissions.png)
-
-* I then clicked on attach policy, selected "Customer Managed Policy" as the policy type. Then chose the "development-policy" i created. I then clicked "Attach Policy."
-![attach-policy ](images/attachpolicy.png)
-
-#### Troubleshooting
-
-I can't sign in to my AWS account
-
-Verify that you have the correct credentials and that you are using the correct method to sign in. For more information, see [Troubleshooting sign-in](https://docs.aws.amazon.com/signin/latest/userguide/troubleshooting-sign-in-issues.html) issues in the AWS Sign-In User Guide.
+   * Click **Next** and then **Create user**.  
+     ![initiate-policy-creation](images/usercreatedsuccessfully.png)
 
 
-### Conclusion
+#### 2.2 Part 2 - Group and Role-Based Access
 
-I have successfully created and managed users, groups and roles. I implemented policies to secure AWS resources, ensuring proper access control and enhancing overall cloud security.
+1. In the **User groups** section, create a group and name it (e.g., "Development-team").  
+   ![create-user-group](images/createusergroup.png)  
+   ![create-user-group](images/usergroupcreated.png)
+
+2. Create a user named **Jack**, and during setup, choose **Add user to group**. Select the previously created group and proceed.  
+   ![create-user-jack](images/userjackcreatedsuccessfully.png)  
+   ![create-user-jack](images/addusertogroup.png)
+
+3. Repeat the process for a new user named **Ade**, adding him to the same group.  
+   ![create-user-ade](images/clickcreateuserade.png)  
+   ![create-user-jack](images/addusertogroup.png)
+
+4. Navigate to the **Policies** section and click **Create policy**.  
+
+   * Select services **EC2** and **S3**.  
+     ![ec2](images/allec2actions2.png)  
+     ![s3](images/alls3actions2.png)
+
+   * Name the policy (e.g., "development-policy") and click **Create policy**.  
+     ![devteampolicy](images/clickcreatedevelopmentteampolicy.png)
+
+5. Go to the **User groups** section, select **Development-team**, and go to the **Permissions** tab.  
+   ![add-permission](images/Addpermissions.png)
+
+   * Choose **Attach policy**, filter by **Customer Managed Policies**, and select the created **development-policy**.  
+     ![attach-policy](images/attachpolicy.png)
+
+
+### 3. Troubleshooting
+
+If you can't sign in to your AWS account, verify that your credentials are correct and you're using the right sign-in method. For more help, refer to:  
+[AWS Sign-In Troubleshooting Guide](https://docs.aws.amazon.com/signin/latest/userguide/troubleshooting-sign-in-issues.html)
+
+
+### 4. Conclusion
+
+This mini project successfully demonstrated the creation and management of IAM users, groups, and policies. It ensured secure access control and reinforced essential AWS IAM concepts for managing permissions within a cloud environment.
